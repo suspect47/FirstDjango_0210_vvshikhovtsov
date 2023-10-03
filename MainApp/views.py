@@ -5,7 +5,6 @@ from django.http import HttpResponse
 
 def home(request):
     text = """<h1>"Изучаем django"</h1>
-              <strong>Автор</strong>: <i>Шиховцов В.В.</i> <br>
-              new line
+              <strong>Автор</strong>: <i>Шиховцов В.В.</i>
            """
     return HttpResponse(text)
