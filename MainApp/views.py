@@ -51,3 +51,17 @@ def get_item(request, id):
             """
             return HttpResponse(result)
     return HttpResponseNotFound(f'Item with id={id} not found')
+
+
+# <ol>
+#     <li> ... </li>
+#     <li> ... </li>
+#     <li> ... </li>
+#     <li> ... </li>
+# </ol>
+def items_list(request):
+    result = "<h2>Список товаров</h2><ol>"
+    for item in items:
+        result += f"""<li><a href="/item/{item['id']}">{item['name']}</a></li>"""
+    result += '</ol>'
+    return HttpResponse(result)
